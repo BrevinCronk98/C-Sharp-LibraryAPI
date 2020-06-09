@@ -1,10 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 
+
 namespace LibraryAPI.Models
 {
     public class LibraryAPIContext : DbContext
     {
-        public TravelAPIContext(DbContextOptions<LibraryAPIContext> options)
+        public LibraryAPIContext(DbContextOptions<LibraryAPIContext> options)
             : base(options)
         {
         }
@@ -14,13 +15,13 @@ namespace LibraryAPI.Models
             protected override void OnModelCreating(ModelBuilder builder)
             {
                 builder.Entity<Genre>()
-                    .HasDate(
+                    .HasData(
                         new Genre { GenreId = 1, GenreName = "Horror", GenreDescription = "A Collection of Short Horror Stories"  },
-                        new Genre { GenreId = 2, GenreName = "Comedy" GenreDescription = "A Collection of Short Comedic Stories"},
-                        new Genre { GenreId = 3, GenreName = "Drama" GenreDescription = "A Collection of Short Drama Stories"},
-                        new Genre { GenreId = 4, GenreName = "Adventure"GenreDescription = "A Collection of Short Adventure Stories" }, 
-                        new Genre { GenreId = 5, GenreName = "Suspenseful" GenreDescription = "A Collection of Short Suspenseful Stories"},
-                        new Genre { GenreId = 6, GenreName = "Poems" GenreDescription = "A Collection of Short Poems"}
+                        new Genre { GenreId = 2, GenreName = "Comedy", GenreDescription = "A Collection of Short Comedic Stories"},
+                        new Genre { GenreId = 3, GenreName = "Drama", GenreDescription = "A Collection of Short Drama Stories"},
+                        new Genre { GenreId = 4, GenreName = "Adventure", GenreDescription = "A Collection of Short Adventure Stories" }, 
+                        new Genre { GenreId = 5, GenreName = "Suspenseful", GenreDescription = "A Collection of Short Suspenseful Stories"},
+                        new Genre { GenreId = 6, GenreName = "Poems", GenreDescription = "A Collection of Short Poems"}
                     );
                     builder.Entity<Story>()
                         .HasData(
@@ -28,8 +29,8 @@ namespace LibraryAPI.Models
 
                             new Story  { StoryId = 2, StoryName = "Octobers Gold by Paul Holmes", StoryDetails = "Like crunchy cornflakes" + "Gold leaves rustle underfoot" + "Beauty in decay."},
 
-                            new Story { StoryId = 3, StoryName = "The Acciden by Minnboy", StoryDetails = "It was one a.m. and Guy Halverson sat in his dark living room. He hadn't moved for over an hour. The accident earlier that evening kept playing over and over in his mind. The light turned red, but he was in a hurry and accelerated. An orange blur came from his right, and in a split second there was a violent jolt, then the bicyclist rolled across his hood and fell out of sight on the pavement. Horns blared angrily and he panicked, stepping on the gas and screeching away from the chaos into the darkness, shaken and keeping an eye on his rearview mirror until he got home.Why did you run, you idiot? He'd never committed a crime before this and punished himself by imagining years in jail, his career gone, his family gone, his future gone.Why not just go to the police right now? You can afford a lawyer.Then someone tapped on the front door and his world suddenly crumbled away beneath him. They found me. There was nothing he could do but answer it. Running would only make matters worse. His body trembling, he got up, went to the door and opened it. A police officer stood under the porch light." + "Mr. Halverson?" + "asked the grim officer.He let out a defeated sigh." + "Yes. Let me —" + "I am terribly sorry, but I'm afraid I have some bad news. Your son's bike was struck by a hit and run driver this evening. He died at the scene. I'm very sorry for your loss."}
-                        )
+                            new Story { StoryId = 3, StoryName = "The Accident by Minnboy", StoryDetails = "It was one a.m. and Guy Halverson sat in his dark living room. He hadn't moved for over an hour. The accident earlier that evening kept playing over and over in his mind. The light turned red, but he was in a hurry and accelerated. An orange blur came from his right, and in a split second there was a violent jolt, then the bicyclist rolled across his hood and fell out of sight on the pavement. Horns blared angrily and he panicked, stepping on the gas and screeching away from the chaos into the darkness, shaken and keeping an eye on his rearview mirror until he got home.Why did you run, you idiot? He'd never committed a crime before this and punished himself by imagining years in jail, his career gone, his family gone, his future gone.Why not just go to the police right now? You can afford a lawyer.Then someone tapped on the front door and his world suddenly crumbled away beneath him. They found me. There was nothing he could do but answer it. Running would only make matters worse. His body trembling, he got up, went to the door and opened it. A police officer stood under the porch light." + "Mr. Halverson?" + "asked the grim officer.He let out a defeated sigh." + "Yes. Let me —" + "I am terribly sorry, but I'm afraid I have some bad news. Your son's bike was struck by a hit and run driver this evening. He died at the scene. I'm very sorry for your loss."}
+                        );
             }
     }
 }

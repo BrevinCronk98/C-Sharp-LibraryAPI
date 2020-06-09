@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using System.ComonentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 
 namespace LibraryAPI.Models
 {
@@ -13,7 +13,7 @@ namespace LibraryAPI.Models
         
         public Genre()
         {
-            this.Stories = new HashSet<StoryGenre>()
+            this.Stories = new HashSet<StoryGenre>();
         }
 
     }

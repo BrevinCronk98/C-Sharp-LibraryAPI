@@ -1,13 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using Microsft.Extensions.Configurations;
+using Microsoft.Extensions.Configuration;
 using System.IO;
 
 namespace LibraryAPI.Models
 {
     public class LibraryAPIContextFactory : IDesignTimeDbContextFactory<LibraryAPIContext>
     {
-        LibraryAPIContext IDesignTimeDbContextFactory<LibraryAPIContext>.CreateDbObject(string[] args)
+        LibraryAPIContext IDesignTimeDbContextFactory<LibraryAPIContext>.CreateDbContext(string[] args)
         {
             IConfigurationRoot configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
@@ -19,7 +19,7 @@ namespace LibraryAPI.Models
 
             builder.UseMySql(connectionString);
 
-            return new LibraryAPIContext(builder.Options)
+            return new LibraryAPIContext(builder.Options);
 
         }
     }
